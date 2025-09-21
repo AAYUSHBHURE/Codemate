@@ -30,31 +30,31 @@ tests/        Unit and integration test stubs
 1. Create and activate a Python 3.10+ environment.
 2. Install dependencies:
 
-   `ash
-   pip install -e .
+   `
+   pip install -e requirements.txt
    `
 
 3. Launch supporting services (development defaults use Docker Compose):
 
-   `ash
+   `
    docker compose -f infra/docker-compose.yml up -d
    `
 
 4. Run the API locally:
 
-   `ash
+   `
    uvicorn api.main:app --reload
    `
 
 5. Trigger a sample ingestion:
 
-   `ash
+   `
    python -m ingestion.run --path data/samples/papers --config configs/dev.yaml
    `
 
 6. Query the agent:
 
-   `ash
+   `
    curl -X POST http://localhost:8000/query \
      -H "Content-Type: application/json" \
      -d '{"query": "Compare Milvus and Qdrant for filtered search.", "trace": true}'
