@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.env
+.env.*
+.cache/
+.vscode/
+.idea/
+data/qdrant/
+data/ollama/
+reports/
+notebooks/
+*.log

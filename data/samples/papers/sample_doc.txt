@@ -1,0 +1,6 @@
+Codex Sample Document
+=====================
+
+This is a placeholder scientific note used for validating the ingestion pipeline.
+It explains the difference between Qdrant and Milvus and includes metadata fields
+that can be extracted during parsing.

@@ -1,0 +1,33 @@
+# Codex Research Report
+
+Generated: {{ generated_at }}
+
+## Executive Summary
+
+{{ summary }}
+
+## Key Findings
+{% if key_findings %}
+{% for item in key_findings %}- {{ item }}
+{% endfor %}
+{% else %}
+_No key findings provided._
+{% endif %}
+
+## Question & Answer Highlights
+{% if qa_pairs %}
+{% for qa in qa_pairs %}### {{ qa.get('question') }}
+{{ qa.get('answer') }}
+
+{% endfor %}
+{% else %}
+_No QA pairs supplied._
+{% endif %}
+
+## Citations
+{% if citations %}
+{% for cite in citations %}- {{ cite.source_id }}{% if cite.page %}, p. {{ cite.page }}{% endif %}{% if cite.snippet %}: {{ cite.snippet }}{% endif %}
+{% endfor %}
+{% else %}
+_No citations were attached._
+{% endif %}

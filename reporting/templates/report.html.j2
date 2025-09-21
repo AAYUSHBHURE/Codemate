@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Codex Research Report</title>
+  <style>
+    body { font-family: Arial, Helvetica, sans-serif; margin: 2rem; color: #1f2933; }
+    h1, h2, h3 { color: #0f172a; }
+    .meta { font-size: 0.9rem; color: #64748b; margin-bottom: 1.5rem; }
+    .citations li { margin-bottom: 0.5rem; }
+    .qa-pair { margin-bottom: 1.25rem; }
+    .qa-question { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <h1>Codex Research Report</h1>
+  <div class="meta">Generated {{ generated_at }}</div>
+
+  <section>
+    <h2>Executive Summary</h2>
+    <p>{{ summary }}</p>
+  </section>
+
+  <section>
+    <h2>Key Findings</h2>
+    {% if key_findings %}
+    <ul>
+      {% for item in key_findings %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+    {% else %}
+    <p>No key findings provided.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2>Question &amp; Answer Highlights</h2>
+    {% if qa_pairs %}
+      {% for qa in qa_pairs %}
+        <div class="qa-pair">
+          <div class="qa-question">{{ qa.get('question') }}</div>
+          <div class="qa-answer">{{ qa.get('answer') }}</div>
+        </div>
+      {% endfor %}
+    {% else %}
+      <p>No QA pairs supplied.</p>
+    {% endif %}
+  </section>
+
+  <section>
+    <h2>Citations</h2>
+    {% if citations %}
+    <ul class="citations">
+      {% for cite in citations %}
+      <li>
+        <strong>{{ cite.source_id }}</strong>
+        {% if cite.page %}(p. {{ cite.page }}){% endif %}
+        {% if cite.snippet %}&mdash; {{ cite.snippet }}{% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+    {% else %}
+    <p>No citations were attached.</p>
+    {% endif %}
+  </section>
+</body>
+</html>

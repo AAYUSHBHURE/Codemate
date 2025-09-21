@@ -1,0 +1,38 @@
+codex:
+  environment: dev
+  embeddings:
+    model: BAAI/bge-base-en-v1.5
+    runtime: fastembed
+    normalize: true
+    batch_size: 32
+  vector_db:
+    engine: qdrant
+    collection: codex_dev
+    distance: cosine
+    hybrid: true
+    host: http://localhost
+    port: 6333
+  llm:
+    model: llama3-8b-instruct
+    inference: ollama
+    url: http://localhost:11434
+    temperature: 0.3
+    max_tokens: 1024
+  retrieval:
+    k_child: 10
+    k_parent: 5
+    compression: true
+    compression_model: llama3-8b-instruct
+  pipeline:
+    chunk_size: 1000
+    chunk_overlap: 150
+    parent_size: 2500
+    ingestion_batch_size: 100
+  security:
+    rbac: false
+    mtls: false
+  tracing:
+    enabled: true
+    exporter: console
+  storage:
+    data_root: ./data
