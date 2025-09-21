@@ -70,4 +70,4 @@ Configuration is centralised in configs/. Override the CODEX_CONFIG environment 
 - Connect embedding workers (FastEmbed) and persistence.
 - Expand observability stack (Grafana dashboards, OpenTelemetry pipelines).
 - Harden summarisation and reporting with LLM-backed synthesis.
-- 
+
