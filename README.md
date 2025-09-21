@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # Codex: Local-First Research Agent
 
 Codex is a local-first research agent that combines high-quality retrieval, agentic reasoning, and report-grade outputs without relying on external services during production queries. This repository provides an MVP-friendly scaffolding that follows the architecture outlined in the design brief.
@@ -70,10 +70,4 @@ Configuration is centralised in configs/. Override the CODEX_CONFIG environment 
 - Connect embedding workers (FastEmbed) and persistence.
 - Expand observability stack (Grafana dashboards, OpenTelemetry pipelines).
 - Harden summarisation and reporting with LLM-backed synthesis.
-
-## License
-
-This repository is distributed for internal exploration and does not currently specify a public license.
-=======
-# Codemate
->>>>>>> c7ba6ee475dff89ab27e415ed0c111126231dd98
+- 
